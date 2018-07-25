@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to the Wall, {{session["name"]}}!</h1>
+    Post a Message
+    <form action="/wall2" method="Post">
+        <textarea name="message" id="post" cols="30" rows="10"></textarea>
+        <input type="submit" value="Post a Message">
+    </form>
+    {% for message in please %}
+    {{message.message}}
+    <form action="/wall3" method="post">
+        <textarea name="comment" id="okok" cols="30" rows="3"></textarea>
+        <input type="submit" value="Post a Comment">
+    </form>
+        {% for message in please %}
+        {{message.message}}
+        {% endfor %}
+    {% endfor %}
+    {% for comment in prettyplease %}
+    {{comment.comment}}
+    {% endfor %}
+</body>
+</html>
